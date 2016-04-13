@@ -17,19 +17,15 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # -----------------------------------------------------------------------------
 #
 # A bash template (BaT)
-#
 # version: 0.1.0
 #
 # requirements:
-#
 #  --jq program installed: used to parse /data/config.json
 #
 # inputs:
-#
 #  --[user-config] configured through /data/config.json
 #
 # outputs:
-#
 #  --notification of script success/failure
 #  --side-effect(s): [user-config]
 #
@@ -51,28 +47,21 @@ EXEC_DIR="$(dirname "$0")"
 . ${EXEC_DIR}/lib/args
 
 ARGS_FILE="${EXEC_DIR}/data/config.json"
-declare -A ARGS
 
 # [user-config] set any external program dependencies here
 declare -a REQ_PROGRAMS=('jq')
 
 # -----------------------------------------------------------------------------
-# check script dependencies and set vars
-#
-check_dependencies "REQ_PROGRAMS[@]"
-COUNT_ARGS=$(jq '.arguments | length'< ${ARGS_FILE})
-
-# -----------------------------------------------------------------------------
 # perform script configuration, arguments parsing, and validation
 #
+check_dependencies "REQ_PROGRAMS[@]"
 display_banner
 scan_for_args "$@"
 check_for_args_completeness
 
 # -----------------------------------------------------------------------------
-# [user-config] any code from this point on is custom code...
-# the bash template has completed all of the necessary argument configuration
-# and management work
+# [user-config] any code from this point on is custom code, using
+# the sevices and variables available through the template
 #
 echo "Doing something."
 echo
