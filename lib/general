@@ -1,0 +1,72 @@
+#!/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# -----------------------------------------------------------------------------
+# Copyright (C) Business Learning Incorporated (businesslearninginc.com)
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License at <http://www.gnu.org/licenses/> for
+# more details.
+# -----------------------------------------------------------------------------
+#
+# bash library for general-purpose script processing
+#
+# version: 0.4.0
+#
+
+# -----------------------------------------------------------------------------
+# check dependencies
+#
+function check_dependencies {
+
+  local -a DEPS=("${!1}")
+
+  for i in "${DEPS[@]}"; do
+    if ! type $i &>/dev/null; then
+      echo
+      echo "Error: $i program not installed."
+      quit
+    fi
+  done
+}
+
+# -----------------------------------------------------------------------------
+# display script banner
+#
+function display_banner {
+
+  echo
+  echo " |"
+  echo " |" $(get_config_details title)
+  echo " |  " $(get_config_details version)
+  echo " |"
+  echo " | Usage:"
+  echo " |  " $(get_config_details syntax)
+  echo " |"
+
+  local COUNT_ARGS=$(get_config_args_length)
+  for ((j=0;j<COUNT_ARGS;j++)) do
+    echo -e ' |  ' $(get_config_arg $j short_form)',' $(get_config_arg $j long_form)' \t'$(get_config_arg $j description)
+  done
+
+  echo " |"
+  echo
+
+}
+
+# -----------------------------------------------------------------------------
+# exit wrapper
+#
+function quit {
+
+  echo
+  exit 1
+
+}

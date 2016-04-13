@@ -1,0 +1,110 @@
+#!/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# -----------------------------------------------------------------------------
+# Copyright (C) Business Learning Incorporated (businesslearninginc.com)
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License at <http://www.gnu.org/licenses/> for
+# more details.
+# -----------------------------------------------------------------------------
+#
+# bash library for command line argument loading/parsing/validating
+#
+# version: 0.4.0
+#
+
+EXEC_DIR="$(dirname "$0")"
+. ${EXEC_DIR}/lib/general
+
+# -----------------------------------------------------------------------------
+# query data/config.json, returning the details object
+#
+function get_config_details {
+  echo $(jq -r '.details.'$1'' < ${ARGS_FILE})
+}
+
+# -----------------------------------------------------------------------------
+# query data/config.json, returning the arguments object
+#
+function get_config_arg {
+  echo $(jq -r '.arguments['$1'].'$2'' < ${ARGS_FILE})
+}
+
+# -----------------------------------------------------------------------------
+# query data/config.json, returning the arguments object length
+#
+function get_config_args_length {
+  echo $(jq -r '.arguments|length' < ${ARGS_FILE})
+}
+
+# -----------------------------------------------------------------------------
+# return argument value from argument key passed into
+#
+function get_config_arg_value {
+
+  local COUNT_ARGS=$(get_config_args_length)
+  for ((j=0;j<COUNT_ARGS;j++)) do
+    local ARG_OPTIONS=$(get_config_arg $j text_string)
+    case $1 in
+      $ARG_OPTIONS)
+        echo "${ARG_VALUE[$j]}"
+        return
+        ;;
+    esac
+  done
+
+}
+
+# -----------------------------------------------------------------------------
+# scan command line for arguments
+#
+function scan_for_args {
+
+  while [[ $# -gt 0 ]]
+  do
+    local COUNT_ARGS=$(get_config_args_length)
+    for ((j=0;j<COUNT_ARGS;j++)) do
+      local ARG_OPTIONS='+('$(get_config_arg $j short_form)'|'$(get_config_arg $j long_form)')'
+      case $1 in
+        $ARG_OPTIONS)
+          ARG_VALUE[${j}]="$2"
+          shift # skip argument
+          ;;
+        *)
+          ;;
+      esac
+    done
+
+    shift # skip argument or value
+  done
+
+}
+
+# -----------------------------------------------------------------------------
+# check for arguments completeness, quitting if required arguments are missing
+#
+function check_for_args_completeness {
+
+  local COUNT_ERRS=0
+  local COUNT_ARGS=$(get_config_args_length)
+
+  for ((j=0;j<COUNT_ARGS;j++)) do
+    if [ -z "${ARG_VALUE[${j}]}" ] && [ $(get_config_arg $j required) == "true" ]; then
+      echo "Error: $(get_config_arg $j text_string) argument ($(get_config_arg $j short_form)|$(get_config_arg $j long_form)) missing."
+      ((COUNT_ERRS++))
+    fi
+  done
+
+  if [ ${COUNT_ERRS} -gt 0 ]; then
+    quit
+  fi
+
+}
