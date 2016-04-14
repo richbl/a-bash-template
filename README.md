@@ -162,7 +162,6 @@ When arguments are correctly passed, the script provides feedback on the success
      |   -d, --delta 	delta (something descriptive)
      |
 
-
     alpha is one
     bravo is two
     charlie is three
