@@ -31,7 +31,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 #
 
 # -----------------------------------------------------------------------------
-# script configuration
+# script declarations
 #
 
 ###############################################################################
@@ -63,12 +63,8 @@ check_for_args_completeness
 # [user-config] any code from this point on is custom code, using
 # the sevices and variables available through the template
 #
-echo "Doing something."
-echo
 echo "alpha is" $(get_config_arg_value alpha)
 echo "bravo is" $(get_config_arg_value bravo)
 echo "charlie is" $(get_config_arg_value charlie)
 echo "delta is" $(get_config_arg_value delta)
-echo
 
-echo "Success."
