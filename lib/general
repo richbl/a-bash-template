@@ -18,23 +18,40 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 #
 # bash library for general-purpose script processing
 #
-# version: 0.4.0
+# version: 0.5.0
 #
 
 # -----------------------------------------------------------------------------
-# check dependencies
+# check program dependencies
 #
-function check_dependencies {
+function check_program_dependencies {
 
   local -a DEPS=("${!1}")
 
   for i in "${DEPS[@]}"; do
     if ! type $i &>/dev/null; then
       echo
-      echo "Error: $i program not installed."
+      echo "Error: program $i not installed."
       quit
     fi
   done
+
+}
+
+# -----------------------------------------------------------------------------
+# check file dependencies
+#
+function check_file_dependencies {
+
+  local -a DEPS=("${!1}")
+  for i in "${DEPS[@]}"; do
+    if [ ! -f $i &>/dev/null ]; then
+      echo
+      echo "Error: file $i not found."
+      quit
+    fi
+  done
+
 }
 
 # -----------------------------------------------------------------------------
