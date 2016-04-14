@@ -162,14 +162,11 @@ When arguments are correctly passed, the script provides feedback on the success
      |   -d, --delta 	delta (something descriptive)
      |
 
-    Doing something.
 
     alpha is one
     bravo is two
     charlie is three
     delta is four
-
-    Success.
 
 ## Custom Configuration: Look for `[user-config]` 
 Since **A-Bash-Template** is a BaT, the real value is to permit custom code to become well-integrated to complete whatever is the required intent of the script run. The design and structure of the template accounts for this, and only  localized changed are necessary.
@@ -179,4 +176,8 @@ To make custom configuration changes, search for the comment string `[user-confi
 ##Yes, We Are [Dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food) A-Bash-Template
 Of course we are! Otherwise, what value does a BaT offer if it doesn't get used often enough to warrant the time to develop a BaT?
 
-Here's our own first *useful* script that uses **A-Bash-Template**: **[remote-folder-copy](https://github.com/richbl/remote-folder-copy)**. Many more to follow...
+Here are some of our own *useful* scripts that use **A-Bash-Template**: 
+
+ - **[remote-folder-copy](https://github.com/richbl/remote-folder-copy)**
+ - **[postgres-db_dump](https://github.com/richbl/postgresql-db-dump)**
+ - **[photography-gallery-generator](https://github.com/richbl/photography-gallery-generator)**
