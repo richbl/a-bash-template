@@ -54,7 +54,7 @@ declare -a REQ_PROGRAMS=('jq')
 # -----------------------------------------------------------------------------
 # perform script configuration, arguments parsing, and validation
 #
-check_dependencies "REQ_PROGRAMS[@]"
+check_program_dependencies "REQ_PROGRAMS[@]"
 display_banner
 scan_for_args "$@"
 check_for_args_completeness
