@@ -17,7 +17,6 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # -----------------------------------------------------------------------------
 #
 # bash library for general-purpose script processing
-#
 # version: 0.5.0
 #
 
