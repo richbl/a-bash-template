@@ -5,7 +5,7 @@
 
 **A-Bash-Template** is designed to make script development and command line argument management more robust, easier to implement, and easier to maintain and update/upgrade. This BaT includes the following features:
 
-- **Dependencies Checker**: a routine that checks all external program dependencies (*e.g.*, [jq](https://stedolan.github.io/jq/))
+- **Dependencies Checker**: a routine that checks all external file and program dependencies (*e.g.*, [jq](https://stedolan.github.io/jq/))
 - **Configuration Details in JSON**: Arguments and script details--such as script description and syntax--are stored in the [JSON](http://www.json.org/) file format (*i.e.*, `config.json`)
 - **JSON Wrapper Functions**: JSON queries (using [jq](https://stedolan.github.io/jq/)) handled through template wrapper functions
 - **Automated Script Banner**: A script banner function automates banner generation, reading directly from `config.json`
@@ -14,7 +14,7 @@
 - **Structured Modular Library**: Template functions organized into libraries to minimize code footprint in the main script, and permits easier maintenance and extensions/add-ons support
 
 ### Dependencies Checker
-The dependencies checker is a routine that checks that all external program dependencies are met. For example, `bash_template.sh` itself relies on one external program for proper execution: [jq](https://stedolan.github.io/jq/), used for parsing its own JSON configuration file (`config.json`).
+The dependencies checker is a routine that checks that all external file and program dependencies are met. For example, `bash_template.sh` itself relies on one external program for proper execution: [jq](https://stedolan.github.io/jq/), used for parsing its own JSON configuration file (`config.json`).
 
 In this instance, to configure dependency checking in `bash_template.sh`, the array variable `REQ_PROGRAMS` is set to `('jq')`. The script then calls into the `check_dependencies` function in the `args` library (found in the `./lib` folder).
 
