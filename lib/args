@@ -17,7 +17,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # -----------------------------------------------------------------------------
 #
 # bash library for command line argument loading/parsing/validating
-# version: 0.4.0
+# version: 0.4.1
 #
 
 EXEC_DIR="$(dirname "$0")"
@@ -27,21 +27,21 @@ EXEC_DIR="$(dirname "$0")"
 # query data/config.json, returning the details object
 #
 function get_config_details {
-  echo $(jq -r '.details.'$1'' < ${ARGS_FILE})
+  printf "%s" "$(jq -r '.details.'$1'' < ${ARGS_FILE})"
 }
 
 # -----------------------------------------------------------------------------
 # query data/config.json, returning the arguments object
 #
 function get_config_arg {
-  echo $(jq -r '.arguments['$1'].'$2'' < ${ARGS_FILE})
+  printf "%s" "$(jq -r '.arguments['$1'].'$2'' < ${ARGS_FILE})"
 }
 
 # -----------------------------------------------------------------------------
 # query data/config.json, returning the arguments object length
 #
 function get_config_args_length {
-  echo $(jq -r '.arguments|length' < ${ARGS_FILE})
+  printf "%s" "$(jq -r '.arguments|length' < ${ARGS_FILE})"
 }
 
 # -----------------------------------------------------------------------------
@@ -81,8 +81,7 @@ function scan_for_args {
           ;;
       esac
     done
-
-    shift # skip argument or value
+    shift # skip argument
   done
 
 }
@@ -97,7 +96,7 @@ function check_for_args_completeness {
 
   for ((j=0;j<COUNT_ARGS;j++)) do
     if [ -z "${ARG_VALUE[${j}]}" ] && [ $(get_config_arg $j required) == "true" ]; then
-      echo "Error: $(get_config_arg $j text_string) argument ($(get_config_arg $j short_form)|$(get_config_arg $j long_form)) missing."
+      printf "%s\n" "Error: $(get_config_arg $j text_string) argument ($(get_config_arg $j short_form)|$(get_config_arg $j long_form)) missing."
       ((COUNT_ERRS++))
     fi
   done
