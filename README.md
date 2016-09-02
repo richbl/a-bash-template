@@ -1,6 +1,8 @@
 # A-Bash-Template
 **A-Bash-Template** (`bash_template.sh`) is a [bash](https://en.wikipedia.org/wiki/Bash_%28Unix_shell%29) script that really does nothing at all. **It's a template.** But it does make scripting much easier...
 
+![image](https://cloud.githubusercontent.com/assets/10182110/18208786/ae5d76b2-70e5-11e6-9663-cfe47d13f4d9.png)
+
 ## What's a Bash Template (BaT)?
 
 **A-Bash-Template** is designed to make script development and command line argument management more robust, easier to implement, and easier to maintain and update/upgrade. This BaT includes the following features:
