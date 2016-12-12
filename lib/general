@@ -17,7 +17,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # -----------------------------------------------------------------------------
 #
 # bash library for general-purpose script processing
-# version: 0.6.0
+# version: 0.6.1
 #
 
 # -----------------------------------------------------------------------------
@@ -30,7 +30,7 @@ function check_program_dependencies {
   for i in "${DEPS[@]}"; do
     if ! type $i &>/dev/null; then
       printf "\n%s\n" "Error: program $i not installed."
-      quit
+      quit 1
     fi
   done
 
@@ -45,7 +45,7 @@ function check_file_dependencies {
   for i in "${DEPS[@]}"; do
     if [ ! -f $i &>/dev/null ]; then
       printf "\n%s\n" "Error: file $i not found."
-      quit
+      quit 1
     fi
   done
 
@@ -89,7 +89,9 @@ function display_banner {
 #
 function quit {
 
+  local RES=("${1}")
+
   printf "%s\n"
-  exit 1
+  exit "${RES}"
 
 }

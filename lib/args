@@ -17,7 +17,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # -----------------------------------------------------------------------------
 #
 # bash library for command line argument loading/parsing/validating
-# version: 0.4.1
+# version: 0.5.0
 #
 
 EXEC_DIR="$(dirname "$0")"
@@ -102,7 +102,7 @@ function check_for_args_completeness {
   done
 
   if [ ${COUNT_ERRS} -gt 0 ]; then
-    quit
+    quit 1
   fi
 
 }
