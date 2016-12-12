@@ -67,4 +67,4 @@ echo "alpha is" $(get_config_arg_value alpha)
 echo "bravo is" $(get_config_arg_value bravo)
 echo "charlie is" $(get_config_arg_value charlie)
 echo "delta is" $(get_config_arg_value delta)
-
+quit 0
