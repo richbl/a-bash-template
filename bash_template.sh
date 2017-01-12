@@ -17,7 +17,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # -----------------------------------------------------------------------------
 #
 # A bash template (BaT)
-# version: 0.1.0
+# version: 0.2.0
 #
 # requirements:
 #  --jq program installed: used to parse /data/config.json
@@ -44,7 +44,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 shopt -s extglob
 EXEC_DIR="$(dirname "$0")"
-. ${EXEC_DIR}/lib/args
+. ${EXEC_DIR}/bash-lib/args
 
 ARGS_FILE="${EXEC_DIR}/data/config.json"
 
