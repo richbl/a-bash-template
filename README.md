@@ -184,3 +184,8 @@ Here are some of our own *useful* scripts that use **A-Bash-Template**:
  - **[remote-folder-copy](https://github.com/richbl/remote-folder-copy)**
  - **[postgres-db_dump](https://github.com/richbl/postgresql-db-dump)**
  - **[photography-gallery-generator](https://github.com/richbl/photography-gallery-generator)**
+
+## A Note on Cloning: This Project Uses Git Submodules
+This project uses a Git [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) project, specifically the `bash-lib` folder to keep the **A-Bash-Template** project up-to-date without manual intervention.
+
+So, be sure to clone this project with the `--recursive` switch (`git clone --recursive https://github.com/richbl/a-bash-template`) so any submodule project(s) will be automatically cloned as well. If you clone into this project without this switch, you'll likely see empty submodule project folders (depending on your version of Git).
