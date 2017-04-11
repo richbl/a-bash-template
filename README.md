@@ -176,7 +176,7 @@ Since **A-Bash-Template** is a BaT, the real value is to permit custom code to b
 
 To make custom configuration changes, search for the comment string `[user-config]` throughout the script sources (there are only a few). These comments provide guidance on what should be changed and why.
 
-##Yes, We Are [Dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food) A-Bash-Template
+## Yes, We Are [Dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food) A-Bash-Template
 Of course we are! Otherwise, what value does a BaT offer if it doesn't get used often enough to warrant the time to develop a BaT?
 
 Here are some of our own *useful* scripts that use **A-Bash-Template**: 
