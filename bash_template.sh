@@ -17,7 +17,6 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # -----------------------------------------------------------------------------
 #
 # A bash template (BaT)
-# version: 0.2.0
 #
 # requirements:
 #  --jq program installed: used to parse /data/config.json
@@ -30,21 +29,21 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 #  --side-effect(s): [user-config]
 #
 
-# -----------------------------------------------------------------------------
-# script declarations
-#
-
-###############################################################################
 #
 # NOTE:
 #   The string '[user-config]' is an indication that some user configuration
 #   may be needed to customize this bash template
 #
-###############################################################################
 
+# -----------------------------------------------------------------------------
+# script declarations
+#
 shopt -s extglob
 EXEC_DIR="$(dirname "$0")"
-. ${EXEC_DIR}/bash-lib/args
+# shellcheck source=bash-lib/args
+source "${EXEC_DIR}/bash-lib/args"
+# shellcheck source=bash-lib/general
+source "${EXEC_DIR}/bash-lib/general"
 
 ARGS_FILE="${EXEC_DIR}/data/config.json"
 
@@ -54,7 +53,7 @@ declare -a REQ_PROGRAMS=('jq')
 # -----------------------------------------------------------------------------
 # perform script configuration, arguments parsing, and validation
 #
-check_program_dependencies "REQ_PROGRAMS[@]"
+check_program_dependencies "${REQ_PROGRAMS[@]}"
 display_banner
 scan_for_args "$@"
 check_for_args_completeness
@@ -63,8 +62,7 @@ check_for_args_completeness
 # [user-config] any code from this point on is custom code, using
 # the sevices and variables available through the template
 #
-echo "alpha is" $(get_config_arg_value alpha)
-echo "bravo is" $(get_config_arg_value bravo)
-echo "charlie is" $(get_config_arg_value charlie)
-echo "delta is" $(get_config_arg_value delta)
-quit 0
+printf "%s\n" "alpha is $(get_config_arg_value alpha)"
+printf "%s\n" "bravo is $(get_config_arg_value bravo)"
+printf "%s\n" "charlie is $(get_config_arg_value charlie)"
+printf "%s\n" "delta is $(get_config_arg_value delta)"

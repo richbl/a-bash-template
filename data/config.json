@@ -3,7 +3,7 @@
     {
       "title": "A bash template (BaT) to ease argument parsing and management",
       "syntax": "bash_template.sh -a alpha -b bravo [-c charlie] -d delta",
-      "version": "0.1.0"
+      "version": "0.2.0"
     },
   "arguments":
     [
