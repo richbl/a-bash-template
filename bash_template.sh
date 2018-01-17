@@ -45,8 +45,6 @@ source "${EXEC_DIR}/bash-lib/args"
 # shellcheck source=bash-lib/general
 source "${EXEC_DIR}/bash-lib/general"
 
-ARGS_FILE="${EXEC_DIR}/data/config.json"
-
 # [user-config] set any external program dependencies here
 declare -a REQ_PROGRAMS=('jq')
 
