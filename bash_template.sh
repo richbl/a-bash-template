@@ -4,16 +4,16 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # -----------------------------------------------------------------------------
 # Copyright (C) Business Learning Incorporated (businesslearninginc.com)
 #
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
+# This program is free software: you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
 #
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License at <http://www.gnu.org/licenses/> for
-# more details.
+# This program is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+# FOR A PARTICULAR PURPOSE.  See the GNU General Public License at 
+# <http://www.gnu.org/licenses/> for more details.
+#
 # -----------------------------------------------------------------------------
 #
 # A bash template (BaT)
@@ -32,18 +32,14 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 #
 # NOTE:
 #   The string '[user-config]' is an indication that some user configuration
-#   may be needed to customize this bash template
+#   may be needed to customize this script
 #
 
 # -----------------------------------------------------------------------------
-# script declarations
+# script library sources and declarations
 #
-shopt -s extglob
-EXEC_DIR="$(dirname "$0")"
-# shellcheck source=bash-lib/args
-source "${EXEC_DIR}/bash-lib/args"
-# shellcheck source=bash-lib/general
-source "${EXEC_DIR}/bash-lib/general"
+. "$(cd "$(dirname "$0")" && pwd)/bash-lib/args"
+. "$(cd "$(dirname "$0")" && pwd)/bash-lib/general"
 
 # [user-config] set any external program dependencies here
 declare -a REQ_PROGRAMS=('jq')
@@ -60,7 +56,22 @@ check_for_args_completeness
 # [user-config] any code from this point on is custom code, using
 # the sevices and variables available through the template
 #
-printf "%s\n" "alpha is $(get_config_arg_value alpha)"
-printf "%s\n" "bravo is $(get_config_arg_value bravo)"
-printf "%s\n" "charlie is $(get_config_arg_value charlie)"
-printf "%s\n" "delta is $(get_config_arg_value delta)"
+
+# declare arguments
+ARG_ALPHA="$(get_config_arg_value alpha)"
+ARG_BRAVO="$(get_config_arg_value bravo)"
+ARG_CHARLIE="$(get_config_arg_value charlie)"
+ARG_DELTA="$(get_config_arg_value delta)"
+readonly ARG_ALPHA
+readonly ARG_BRAVO
+readonly ARG_CHARLIE
+readonly ARG_DELTA
+
+printf "%s\n" "alpha is $ARG_ALPHA"
+printf "%s\n" "bravo is $ARG_BRAVO"
+
+if [ -n "${ARG_CHARLIE}" ]; then
+  printf "%s\n" "charlie is $ARG_CHARLIE"
+fi
+
+printf "%s\n" "delta is $ARG_DELTA"
