@@ -11,7 +11,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 #
 # This program is distributed in the hope that it will be useful, but WITHOUT
 # ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-# FOR A PARTICULAR PURPOSE.  See the GNU General Public License at 
+# FOR A PARTICULAR PURPOSE. See the GNU General Public License at
 # <http://www.gnu.org/licenses/> for more details.
 #
 # -----------------------------------------------------------------------------
@@ -38,8 +38,9 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # -----------------------------------------------------------------------------
 # script library sources and declarations
 #
-. "$(cd "$(dirname "$0")" && pwd)/bash-lib/args"
-. "$(cd "$(dirname "$0")" && pwd)/bash-lib/general"
+EXEC_DIR="$(dirname "$(readlink -f "$0")")"
+source "${EXEC_DIR}/bash-lib/general"
+source "${EXEC_DIR}/bash-lib/args"
 
 # [user-config] set any external program dependencies here
 declare -a REQ_PROGRAMS=('jq')

@@ -35,7 +35,7 @@ The JSON file used in **A-Bash-Template** is displayed below:
         {
           "title": "A bash template (BaT) to ease argument parsing and management",
           "syntax": "bash_template.sh -a alpha -b bravo [-c charlie] -d delta",
-          "version": "1.1.0"
+          "version": "1.1.1"
         },
       "arguments":
         [
@@ -76,7 +76,7 @@ The informational banner that displays details about how to use the script is ge
 
     |
     | A bash template (BaT) to ease argument parsing and management
-    |   1.1.0
+    |   1.1.1
     |
     | Usage:
     |   bash_template.sh -a alpha -b bravo [-c charlie] -d delta
@@ -97,7 +97,7 @@ When **A-Bash-Template** is first run, it parses the command line to identify co
 
       |
       | A bash template (BaT) to ease argument parsing and management
-      |   1.1.0
+      |   1.1.1
       |
       | Usage:
       |   bash_template.sh -a alpha -b bravo [-c charlie] -d delta
@@ -131,7 +131,7 @@ Here's the default response when running `bash_template.sh` with no arguments:
 
       |
       | A bash template (BaT) to ease argument parsing and management
-      |   1.1.0
+      |   1.1.1
       |
       | Usage:
       |   bash_template.sh -a alpha -b bravo [-c charlie] -d delta
@@ -156,7 +156,7 @@ When arguments are correctly passed, the script provides feedback on the success
 
       |
       | A bash template (BaT) to ease argument parsing and management
-      |   1.1.0
+      |   1.1.1
       |
       | Usage:
       |   bash_template.sh -a alpha -b bravo [-c charlie] -d delta
