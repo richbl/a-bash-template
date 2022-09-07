@@ -182,11 +182,7 @@ To make custom configuration changes, search for the comment string `[user-confi
 
 Of course we are! Otherwise, what value does a BaT offer if it doesn't get used often enough to warrant the time to develop a BaT?
 
-Here are some of our own *useful* scripts that use **A-Bash-Template**:
-
-- **[remote-folder-copy](https://github.com/richbl/remote-folder-copy)**
-- **[postgres-db_dump](https://github.com/richbl/postgresql-db-dump)**
-- **[photography-gallery-generator](https://github.com/richbl/photography-gallery-generator)**
+All of our bash scripts have been written to use this project. It's cut our development time, and made it easier to provide updates and added functionality without having to spend time reinventing the wheel every time. Check out all of our projects here on [Github](https://github.com/richbl).
 
 ## IMPORTANT! This Project Uses Git Submodules
 
