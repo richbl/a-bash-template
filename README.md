@@ -91,7 +91,7 @@ By default,  `display_banner` is called when the script is first run.
 
 ### Command Line Parsing and Completeness Testing
 
-When **A-Bash-Template** is first run, it parses the command line to identify command line argument values (*e.g.*, `--password = pass123`), and also check to see whether all required arguments have been set. If command line arguments are missing, the script will report it:
+When **A-Bash-Template** is first run, it parses the command line to identify command line argument values (*e.g.*, `--password = pass123`), and also checks to see whether all required arguments have been set. If command line arguments are missing, the script will report it:
 
     $ ./bash_template.sh -a one
 
