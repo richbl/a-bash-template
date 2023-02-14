@@ -3,7 +3,7 @@
 **A-Bash-Template** (`bash_template.sh`) is a [bash](https://en.wikipedia.org/wiki/Bash_%28Unix_shell%29) script that really does nothing at all: **it's a template.** But it does make scripting--particularly parameter passing--much easier, more organized, and more consistent.
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/10182110/145758715-b127adfc-710b-49d3-9ede-151adc83ae76.png" width="400" />
+<picture><img src="https://user-images.githubusercontent.com/10182110/145758715-b127adfc-710b-49d3-9ede-151adc83ae76.png" width="400" /></picture>
 </p>
 
 ## What's a Bash Template (BaT)?
@@ -184,7 +184,7 @@ Of course we are! Otherwise, what value does a BaT offer if it doesn't get used 
 
 All of our bash scripts have been written to use this project. It's cut our development time, and made it easier to provide updates and added functionality without having to spend time reinventing the wheel every time. Check out all of our projects here on [Github](https://github.com/richbl).
 
-## IMPORTANT: This Project Uses Git Submodules  <img src="https://user-images.githubusercontent.com/10182110/208980142-08d4cf6e-20ac-4243-ac69-e056258b0315.png" width="150" />
+## IMPORTANT: This Project Uses Git Submodules  <picture><img src="https://user-images.githubusercontent.com/10182110/208980142-08d4cf6e-20ac-4243-ac69-e056258b0315.png" width="150" /></picture>
 
 This project uses a Git [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) project, specifically the `bash-lib` folder to keep this project up-to-date without manual intervention.
 
