@@ -3,7 +3,7 @@
 **A-Bash-Template** (`bash_template.sh`) is a [bash](https://en.wikipedia.org/wiki/Bash_%28Unix_shell%29) script that really does nothing at all: **it's a template.** But it does make scripting--particularly parameter passing--much easier, more organized, and more consistent.
 
 <p align="center">
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/10182110/145758715-b127adfc-710b-49d3-9ede-151adc83ae76.png" width="400"><source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/10182110/145758715-b127adfc-710b-49d3-9ede-151adc83ae76.png" width="400"><img src="https://user-images.githubusercontent.com/10182110/145758715-b127adfc-710b-49d3-9ede-151adc83ae76.png" width="400"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/4dc1e16e-3fd3-481c-9a43-b027c029dd27" width="400"><source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/4dc1e16e-3fd3-481c-9a43-b027c029dd27" width="400"><img src="https://github.com/user-attachments/assets/4dc1e16e-3fd3-481c-9a43-b027c029dd27" width="400"></picture>
 </p>
 
 ## What's a Bash Template (BaT)?
