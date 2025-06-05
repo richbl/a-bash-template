@@ -117,7 +117,7 @@ When **A-Bash-Template** is run, it parses the command line to identify command 
 
 - An operational [bash](https://en.wikipedia.org/wiki/Bash_%28Unix_shell%29) environment (bash 4.3.2 used during initial development)
 - One additional external program:
-  - [jq](https://stedolan.github.io/jq/), used for parsing the `config.json` file
+    - [jq](https://stedolan.github.io/jq/), used for parsing the `config.json` file
 
 While this package was originally written and tested under Linux (Ubuntu 15.10 and bash 4.3.2), there should be no reason why this won't work with other shells or other Unix-like operating systems.
 
@@ -178,14 +178,26 @@ Since **A-Bash-Template** is a BaT, the real value is to permit custom code to b
 
 To make custom configuration changes easier, search for the comment string `[user-config]` throughout the script sources (there are only a few). These comments provide additional guidance on what should be changed and why.
 
+## Bonus: The `bash-lib` Test Runner
+
+As part of this project, we've included a test runner for **bash-lib**. This test runner exercises the **bash-lib** library and provides feedback on the success or failure of each test. It serves a good template for future test runners you might use as a part of your own BaT project.
+
+To run the `bash-lib` test runner:
+
+    ./bash_lib_test_runner.sh
+
 ## Yes, We Are [Dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food) the A-Bash-Template Project
 
 Of course we are! Otherwise, what value does a BaT offer if it doesn't get used often enough to warrant the time to develop a BaT?
 
 All of our bash scripts have been written to use this project. It's cut our development time, and made it easier to provide updates and added functionality without having to spend time reinventing the wheel every time. Check out all of our projects here on [Github](https://github.com/richbl).
 
-## IMPORTANT: This Project Uses Git Submodules <picture><source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/10182110/208980142-08d4cf6e-20ac-4243-ac69-e056258b0315.png" width="150"><source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/10182110/208980142-08d4cf6e-20ac-4243-ac69-e056258b0315.png" width="150"><img src="https://user-images.githubusercontent.com/10182110/208980142-08d4cf6e-20ac-4243-ac69-e056258b0315.png" width="150"></picture>
+## <picture><source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/10182110/208980142-08d4cf6e-20ac-4243-ac69-e056258b0315.png" width="100"><source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/10182110/208980142-08d4cf6e-20ac-4243-ac69-e056258b0315.png" width="100"><img src= "https://user-images.githubusercontent.com/10182110/208980142-08d4cf6e-20ac-4243-ac69-e056258b0315.png" width="100"></picture>  This Project Uses Git Submodules
 
-This project uses [Git submodule project(s)](https://git-scm.com/book/en/v2/Git-Tools-Submodules) (located in the `bash-lib` folder) to keep this project up-to-date without manual intervention.
+This project uses [Git submodule project(s)](https://git-scm.com/book/en/v2/Git-Tools-Submodules) (found in the `bash-lib` folder) to keep this project stable while the [`bash-lib` project](https://github.com/richbl/bash-lib) is periodically updated.
 
-**Be sure to clone this project with the `--recursive` switch** (`git clone --recursive https://github.com/richbl/this_project`) so any submodule project(s) will be automatically cloned as well. If you clone into this project without this switch, you'll likely see empty submodule project folders (depending on your version of Git).
+**Be sure to clone this project with the `--recursive` switch**:
+
+    git clone --recursive https://github.com/richbl/this_project
+
+so any submodule project(s) will be automatically cloned as well. If you clone into this project without this switch, you'll likely see empty submodule project folders (depending on your version of Git).
