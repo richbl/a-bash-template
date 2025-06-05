@@ -121,6 +121,16 @@ When **A-Bash-Template** is run, it parses the command line to identify command 
 
 While this package was originally written and tested under Linux (Ubuntu 15.10 and bash 4.3.2), there should be no reason why this won't work with other shells or other Unix-like operating systems.
 
+## <picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/2356369f-c752-4e55-8443-49f4174df4b5" width="50"><source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/2356369f-c752-4e55-8443-49f4174df4b5" width="50"><img src="https://github.com/user-attachments/assets/2356369f-c752-4e55-8443-49f4174df4b5" width="50"></picture>  This Project Uses Git Submodules <picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/2356369f-c752-4e55-8443-49f4174df4b5" width="50"><source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/2356369f-c752-4e55-8443-49f4174df4b5" width="50"><img src="https://github.com/user-attachments/assets/2356369f-c752-4e55-8443-49f4174df4b5" width="50"></picture>
+
+This project uses [Git submodule project(s)](https://git-scm.com/book/en/v2/Git-Tools-Submodules) (found in the `bash-lib` folder) to keep this project stable while the [`bash-lib` project](https://github.com/richbl/bash-lib) is periodically updated.
+
+**Be sure to clone this project with the `--recursive` switch**:
+
+    git clone --recursive https://github.com/richbl/this_project
+
+so any submodule project(s) will be automatically cloned as well. If you clone into this project without this switch, you'll likely see empty submodule project folders (depending on your version of Git).
+
 ## Basic Usage
 
 **A-Bash-Template** is run through a command line interface, so all of the command options are made available there.
@@ -191,13 +201,3 @@ To run the `bash-lib` test runner:
 Of course we are! Otherwise, what value does a BaT offer if it doesn't get used often enough to warrant the time to develop a BaT?
 
 All of our bash scripts have been written to use this project. It's cut our development time, and made it easier to provide updates and added functionality without having to spend time reinventing the wheel every time. Check out all of our projects here on [Github](https://github.com/richbl).
-
-## <picture><source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/10182110/208980142-08d4cf6e-20ac-4243-ac69-e056258b0315.png" width="100"><source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/10182110/208980142-08d4cf6e-20ac-4243-ac69-e056258b0315.png" width="100"><img src= "https://user-images.githubusercontent.com/10182110/208980142-08d4cf6e-20ac-4243-ac69-e056258b0315.png" width="100"></picture>  This Project Uses Git Submodules
-
-This project uses [Git submodule project(s)](https://git-scm.com/book/en/v2/Git-Tools-Submodules) (found in the `bash-lib` folder) to keep this project stable while the [`bash-lib` project](https://github.com/richbl/bash-lib) is periodically updated.
-
-**Be sure to clone this project with the `--recursive` switch**:
-
-    git clone --recursive https://github.com/richbl/this_project
-
-so any submodule project(s) will be automatically cloned as well. If you clone into this project without this switch, you'll likely see empty submodule project folders (depending on your version of Git).
