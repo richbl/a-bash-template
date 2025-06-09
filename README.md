@@ -35,7 +35,7 @@ The JSON file used in **A-Bash-Template** is displayed below:
         {
           "title": "A bash template (BaT) to ease argument parsing and management",
           "syntax": "bash_template.sh -a alpha -b bravo [-c charlie] -d delta",
-          "version": "1.1.1"
+          "version": "1.2.0"
         },
       "arguments":
         [
@@ -76,7 +76,7 @@ The informational banner that displays details about how to use the script is ge
 
     |
     | A bash template (BaT) to ease argument parsing and management
-    |   1.1.1
+    |   1.2.0
     |
     | Usage:
     |   bash_template.sh -a alpha -b bravo [-c charlie] -d delta
@@ -97,7 +97,7 @@ When **A-Bash-Template** is run, it parses the command line to identify command 
 
       |
       | A bash template (BaT) to ease argument parsing and management
-      |   1.1.1
+      |   1.2.0
       |
       | Usage:
       |   bash_template.sh -a alpha -b bravo [-c charlie] -d delta
@@ -141,7 +141,7 @@ Here's the default response when running `bash_template.sh` with no arguments:
 
       |
       | A bash template (BaT) to ease argument parsing and management
-      |   1.1.1
+      |   1.2.0
       |
       | Usage:
       |   bash_template.sh -a alpha -b bravo [-c charlie] -d delta
@@ -166,7 +166,7 @@ When arguments are correctly passed, the script provides feedback on the success
 
       |
       | A bash template (BaT) to ease argument parsing and management
-      |   1.1.1
+      |   1.2.0
       |
       | Usage:
       |   bash_template.sh -a alpha -b bravo [-c charlie] -d delta
@@ -190,7 +190,7 @@ To make custom configuration changes easier, search for the comment string `[use
 
 ## Bonus: The `bash-lib` Test Runner
 
-As part of this project, we've included a test runner for **bash-lib**. This test runner exercises the **bash-lib** library and provides feedback on the success or failure of each test. It serves a good template for future test runners you might use as a part of your own BaT project.
+As part of this project, we've included a test runner for **bash-lib**. This test runner exercises the **bash-lib** library and provides feedback on the success or failure of each of (currently) 33 tests. It serves a useful template for future test runners you might use as a part of your own BaT project.
 
 To run the `bash-lib` test runner:
 
