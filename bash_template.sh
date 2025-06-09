@@ -55,7 +55,7 @@ check_for_args_completeness
 
 # -----------------------------------------------------------------------------
 # [user-config] any code from this point on is custom code, using
-# the sevices and variables available through the template
+# the services and variables available through the template
 #
 
 # declare arguments
