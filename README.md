@@ -30,86 +30,92 @@ Script details, such as the script description, version and script syntax, and a
 
 The JSON file used in **A-Bash-Template** is displayed below:
 
+```json
+{
+  "details":
     {
-      "details":
-        {
-          "title": "A bash template (BaT) to ease argument parsing and management",
-          "syntax": "bash_template.sh -a alpha -b bravo [-c charlie] -d delta",
-          "version": "1.2.0"
-        },
-      "arguments":
-        [
-          {
-            "short_form": "-a",
-            "long_form": "--alpha",
-            "text_string": "alpha",
-            "description": "alpha (something descriptive)",
-            "required": true
-          },
-          {
-            "short_form": "-b",
-            "long_form": "--bravo",
-            "text_string": "bravo",
-            "description": "bravo (something descriptive)",
-            "required": true
-          },
-          {
-            "short_form": "-c",
-            "long_form": "--charlie",
-            "text_string": "charlie",
-            "description": "charlie (this is optional)",
-            "required": false
-          },
-          {
-            "short_form": "-d",
-            "long_form": "--delta",
-            "text_string": "delta",
-            "description": "delta (something descriptive)",
-            "required": true
-          }
-        ]
-    }
+      "title": "A bash template (BaT) to ease argument parsing and management",
+      "syntax": "bash_template.sh -a alpha -b bravo [-c charlie] -d delta",
+      "version": "1.2.0"
+    },
+  "arguments":
+    [
+      {
+        "short_form": "-a",
+        "long_form": "--alpha",
+        "text_string": "alpha",
+        "description": "alpha (something descriptive)",
+        "required": true
+      },
+      {
+        "short_form": "-b",
+        "long_form": "--bravo",
+        "text_string": "bravo",
+        "description": "bravo (something descriptive)",
+        "required": true
+      },
+      {
+        "short_form": "-c",
+        "long_form": "--charlie",
+        "text_string": "charlie",
+        "description": "charlie (this is optional)",
+        "required": false
+      },
+      {
+        "short_form": "-d",
+        "long_form": "--delta",
+        "text_string": "delta",
+        "description": "delta (something descriptive)",
+        "required": true
+      }
+    ]
+}
+```
 
 ### Automated Script Banner
 
-The informational banner that displays details about how to use the script is generated using configuration details held in the JSON file. A call to `display_banner` in the `./lib/general` library displays the following:
+The informational banner that displays details about how to use the script is generated using configuration details held in the JSON file. A call to `display_banner` in the `./lib/general` library displays the following:  
 
-    |
-    | A bash template (BaT) to ease argument parsing and management
-    |   1.2.0
-    |
-    | Usage:
-    |   bash_template.sh -a alpha -b bravo [-c charlie] -d delta
-    |
-    |   -a, --alpha     alpha (something descriptive)
-    |   -b, --bravo     bravo (something descriptive)
-    |   -c, --charlie   charlie (this is optional)
-    |   -d, --delta     delta (something descriptive)
-    |
+``` terminal
+|
+| A bash template (BaT) to ease argument parsing and management
+|   1.2.0
+|
+| Usage:
+|   bash_template.sh -a alpha -b bravo [-c charlie] -d delta
+|
+|   -a, --alpha     alpha (something descriptive)
+|   -b, --bravo     bravo (something descriptive)
+|   -c, --charlie   charlie (this is optional)
+|   -d, --delta     delta (something descriptive)
+|
+```
 
 By default, `display_banner` is called when the script is run.
 
 ### Command Line Parsing and Completeness Testing
 
-When **A-Bash-Template** is run, it parses the command line to identify command line argument values (*e.g.* `--password = pass123`), and also checks to see whether all required arguments have been set. If command line arguments are missing, the script will report it:
+When **A-Bash-Template** is run, it parses the command line to identify command line argument values (*e.g.* `--password = pass123`), and also checks to see whether all required arguments have been set. If command line arguments are missing, the script will report it:  
 
-    $ ./bash_template.sh -a one
+``` terminal
+$ ./bash_template.sh -a one
 
-      |
-      | A bash template (BaT) to ease argument parsing and management
-      |   1.2.0
-      |
-      | Usage:
-      |   bash_template.sh -a alpha -b bravo [-c charlie] -d delta
-      |
-      |   -a, --alpha     alpha (something descriptive)
-      |   -b, --bravo     bravo (something descriptive)
-      |   -c, --charlie   charlie (this is optional)
-      |   -d, --delta     delta (something descriptive)
-      |
+  |
+  | A bash template (BaT) to ease argument parsing and management
+  |   1.2.0
+  |
+  | Usage:
+  |   bash_template.sh -a alpha -b bravo [-c charlie] -d delta
+  |
+  |   -a, --alpha     alpha (something descriptive)
+  |   -b, --bravo     bravo (something descriptive)
+  |   -c, --charlie   charlie (this is optional)
+  |   -d, --delta     delta (something descriptive)
+  |
 
-    Error: bravo argument (-b|--bravo) missing.
-    Error: delta argument (-d|--delta) missing.
+Error: bravo argument (-b|--bravo) missing.
+Error: delta argument (-d|--delta) missing.
+```
 
 > **Note**: The optional argument (-c|--charlie) did not get flagged as an omission since it's an optional argument and not a required argument.
 
@@ -127,7 +133,9 @@ This project uses [Git submodule project(s)](https://git-scm.com/book/en/v2/Git-
 
 **Be sure to clone this project with the `--recursive` switch**:
 
-    git clone --recursive https://github.com/richbl/this_project
+``` terminal
+git clone --recursive https://github.com/richbl/this_project
+```
 
 so any submodule project(s) will be automatically cloned as well. If you clone into this project without this switch, you'll likely see empty submodule project folders (depending on your version of Git).
 
@@ -137,24 +145,26 @@ so any submodule project(s) will be automatically cloned as well. If you clone i
 
 Here's the default response when running `bash_template.sh` with no arguments:
 
-    $ ./bash_template.sh
+``` terminal
+$ ./bash_template.sh
 
-      |
-      | A bash template (BaT) to ease argument parsing and management
-      |   1.2.0
-      |
-      | Usage:
-      |   bash_template.sh -a alpha -b bravo [-c charlie] -d delta
-      |
-      |   -a, --alpha     alpha (something descriptive)
-      |   -b, --bravo     bravo (something descriptive)
-      |   -c, --charlie   charlie (this is optional)
-      |   -d, --delta     delta (something descriptive)
-      |
+  |
+  | A bash template (BaT) to ease argument parsing and management
+  |   1.2.0
+  |
+  | Usage:
+  |   bash_template.sh -a alpha -b bravo [-c charlie] -d delta
+  |
+  |   -a, --alpha     alpha (something descriptive)
+  |   -b, --bravo     bravo (something descriptive)
+  |   -c, --charlie   charlie (this is optional)
+  |   -d, --delta     delta (something descriptive)
+  |
 
-    Error: bravo argument (-a|--alpha) missing.
-    Error: bravo argument (-b|--bravo) missing.
-    Error: delta argument (-d|--delta) missing.
+Error: bravo argument (-a|--alpha) missing.
+Error: bravo argument (-b|--bravo) missing.
+Error: delta argument (-d|--delta) missing.
+```
 
 In this example, the program responds by indicating that the required script arguments must be set before proper operation.
 
@@ -162,25 +172,27 @@ In this example, the program responds by indicating that the required script arg
 
 When arguments are correctly passed, the script provides feedback on the success (or failure) of the script:
 
-    $ ./bash_template.sh -a one -b two -c three -d four
+``` terminal
+$ ./bash_template.sh -a one -b two -c three -d four
 
-      |
-      | A bash template (BaT) to ease argument parsing and management
-      |   1.2.0
-      |
-      | Usage:
-      |   bash_template.sh -a alpha -b bravo [-c charlie] -d delta
-      |
-      |   -a, --alpha     alpha (something descriptive)
-      |   -b, --bravo     bravo (something descriptive)
-      |   -c, --charlie   charlie (this is optional)
-      |   -d, --delta     delta (something descriptive)
-      |
+  |
+  | A bash template (BaT) to ease argument parsing and management
+  |   1.2.0
+  |
+  | Usage:
+  |   bash_template.sh -a alpha -b bravo [-c charlie] -d delta
+  |
+  |   -a, --alpha     alpha (something descriptive)
+  |   -b, --bravo     bravo (something descriptive)
+  |   -c, --charlie   charlie (this is optional)
+  |   -d, --delta     delta (something descriptive)
+  |
 
-    alpha is one
-    bravo is two
-    charlie is three
-    delta is four
+alpha is one
+bravo is two
+charlie is three
+delta is four
+```
 
 ## Custom Configuration: Look for `[user-config]`
 
@@ -194,10 +206,16 @@ As part of this project, we've included a test runner for **bash-lib**. This tes
 
 To run the `bash-lib` test runner:
 
-    ./bash_lib_test_runner.sh
+``` terminal
+./bash_lib_test_runner.sh
+```
 
 ## Yes, We Are [Dogfooding](https://en.wikipedia.org/wiki/Eating_your_own_dog_food) the A-Bash-Template Project
 
 Of course we are! Otherwise, what value does a BaT offer if it doesn't get used often enough to warrant the time to develop a BaT?
 
 All of our bash scripts have been written to use this project. It's cut our development time, and made it easier to provide updates and added functionality without having to spend time reinventing the wheel every time. Check out all of our projects here on [Github](https://github.com/richbl).
+
+## License
+
+This project is distributed under the [MIT License](https://github.com/richbl/a-bash-template/blob/main/LICENSE)
