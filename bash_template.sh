@@ -1,22 +1,23 @@
-#!/bin/bash
-PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+#!/usr/bin/env bash
 
 # -----------------------------------------------------------------------------
-# Copyright (C) Business Learning Incorporated (businesslearninginc.com)
+# Copyright (c) 2025 Richard Bloch
 #
-# This program is free software: you can redistribute it and/or modify it under
-# the terms of the GNU General Public License as published by the Free Software
-# Foundation, either version 3 of the License, or (at your option) any later
-# version.
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
 #
-# This program is distributed in the hope that it will be useful, but WITHOUT
-# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-# FOR A PARTICULAR PURPOSE. See the GNU General Public License at
-# <http://www.gnu.org/licenses/> for more details.
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
 #
 # -----------------------------------------------------------------------------
 #
-# A bash template (BaT)
+# A Bash Template (BaT) Project
+# Demonstrating the use of the bash-lib project for argument parsing and configuration
+# Version 1.2.0
 #
 # requirements:
 #  --jq program installed: used to parse /data/config.json
@@ -36,7 +37,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 #
 
 # -----------------------------------------------------------------------------
-# script library sources and declarations
+# Script library sources and declarations
 #
 EXEC_DIR="$(dirname "$(readlink -f "$0")")"
 source "${EXEC_DIR}/bash-lib/general"
@@ -46,7 +47,7 @@ source "${EXEC_DIR}/bash-lib/args"
 declare -a REQ_PROGRAMS=('jq')
 
 # -----------------------------------------------------------------------------
-# perform script configuration, arguments parsing, and validation
+# Perform script configuration, arguments parsing, and validation
 #
 check_program_dependencies "${REQ_PROGRAMS[@]}"
 display_banner
@@ -55,19 +56,22 @@ check_for_args_completeness
 
 # -----------------------------------------------------------------------------
 # [user-config] any code from this point on is custom code, using
-# the services and variables available through the template
+# the services and variables available through the bash-lib library
 #
 
-# declare arguments
+# Declare and define arguments
 ARG_ALPHA="$(get_config_arg_value alpha)"
 ARG_BRAVO="$(get_config_arg_value bravo)"
 ARG_CHARLIE="$(get_config_arg_value charlie)"
 ARG_DELTA="$(get_config_arg_value delta)"
+
+# Make arguments read-only (optional, but recommended for larger scripts)
 readonly ARG_ALPHA
 readonly ARG_BRAVO
 readonly ARG_CHARLIE
 readonly ARG_DELTA
 
+# Display arguments
 printf "%s\n" "alpha is $ARG_ALPHA"
 printf "%s\n" "bravo is $ARG_BRAVO"
 
