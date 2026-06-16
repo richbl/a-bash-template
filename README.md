@@ -1,6 +1,9 @@
 # A-Bash-Template
 
-![GitHub Release](https://img.shields.io/github/v/release/richbl/a-bash-template)  ![GitHub License](https://img.shields.io/github/license/richbl/a-bash-template?color=blue)  [![Codacy Badge](https://app.codacy.com/project/badge/Grade/37545fb055c3499686b1354e3f733603)](https://app.codacy.com/gh/richbl/a-bash-template/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+<!-- markdownlint-disable MD033 -->
+<a href="https://github.com/richbl/a-bash-template/releases"><img alt="Link to Releases" src="https://badgen.net/github/tag/richbl/a-bash-template?icon=github&label=release"></a>
+<a href="https://app.codacy.com/gh/richbl/a-bash-template/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade"><img alt="Link to Codacy Report" src="https://app.codacy.com/project/badge/Grade/37545fb055c3499686b1354e3f733603"></a>
+<!-- markdownlint-enable MD033 -->
 
 **A-Bash-Template** (`bash_template.sh`) is a [bash](https://en.wikipedia.org/wiki/Bash_%28Unix_shell%29) script that really does nothing at all: **it's a template.** But it does make scripting--particularly parameter passing--much easier, more organized, and more consistent.
 
