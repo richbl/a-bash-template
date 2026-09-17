@@ -2,6 +2,7 @@
 
 <!-- markdownlint-disable MD033 -->
 <a href="https://github.com/richbl/a-bash-template/releases"><img alt="Link to Releases" src="https://badgen.net/github/tag/richbl/a-bash-template?icon=github&label=release"></a>
+<a href="https://github.com/richbl/a-bash-template/pulls?q=is%3Apr+state%3Aclosed"><img alt="Link to PRs" src="https://badgen.net/github/last-commit/richbl/a-bash-template?color=blue&icon=github"></a>
 <a href="https://app.codacy.com/gh/richbl/a-bash-template/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade"><img alt="Link to Codacy Report" src="https://app.codacy.com/project/badge/Grade/37545fb055c3499686b1354e3f733603"></a>
 <!-- markdownlint-enable MD033 -->
 
